@@ -2,14 +2,25 @@
 <html lang="en">
 
 <head>
-   
-    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121783460-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-121783460-1');
+    </script>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Video Sync</title>
+    <title>Vynchronize</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -39,7 +50,42 @@
 <body class="bg-light" id="Home">
 
     <!-- Navigation -->
-   
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="#Home"><img src="img/logo.png" alt="Vynchronize logo" height="40" width="40"> Vynchronize</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <!-- <li class="nav-item active">
+              <a class="nav-link js-scroll-trigger" href="#Home">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li> -->
+                    <li class="nav-item">
+                        <a id="chat-nav" class="nav-link js-scroll-trigger hide" href="#messageArea">Chatroom</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="about-nav" class="nav-link js-scroll-trigger hide" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="contact-nav" class="nav-link js-scroll-trigger hide" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a target="_blank" rel="noopener noreferrer" class="nav-link js-scroll-trigger" href="https://www.facebook.com/vynchronize">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a target="_blank" rel="noopener noreferrer" class="nav-link js-scroll-trigger" href="https://github.com/kyle8998/Vynchronize">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
     <!-- Page Content -->
     <div class="container">
@@ -52,8 +98,8 @@
         <div id="userFormArea" class="row">
             <div class="col-md-12">
                 <!-- ADD DESCRIPTION HERE -->
-                <h2>Welcome to Video Sync</h2>
-                
+                <h2>Welcome to Vynchronize</h2>
+                <p class="lead">The hot new video synchronization platform used to watch videos in realtime with friends!</p>
                 <hr style="height:20pt; visibility:hidden;" />
 
                 <h2> Join a Room! </h2>
@@ -360,7 +406,13 @@
     </div>
     <!-- /.container -->
 
-   
+    <!-- Footer -->
+    <footer id="footer" class="py-5 bg-dark footer">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Vynchronize 2018</p>
+        </div>
+        <!-- /.container -->
+    </footer>
 
     <script>
         var socket = io.connect();
@@ -477,7 +529,7 @@
                             $roomArea.show();
 
                             // Move footer to correct position
-                            
+                            document.getElementById('footer').style.position = 'relative';
 
                             // Show header buttons!
                             document.getElementById('chat-nav').style.display = 'block';
